@@ -24,7 +24,7 @@ export default function HomeScreen() {
             <View>
               <View style={styles.brandRow}>
                 <ThemedText type="title" style={styles.brand}>
-                  zim scripture
+                  myble
                 </ThemedText>
                 <ZimFlag width={44} />
               </View>
@@ -51,6 +51,25 @@ export default function HomeScreen() {
             <View style={{ flex: 6, backgroundColor: Zim.red }} />
             <View style={{ flex: 1, backgroundColor: Zim.black }} />
           </View>
+
+          {/* Featured: The Ten Commandments */}
+          <Pressable
+            style={({ pressed }) => [
+              styles.feature,
+              pressed && styles.featurePressed,
+            ]}
+            onPress={() => router.push("/commandments")}
+          >
+            <View style={styles.featureBubble}>
+              <ThemedText style={styles.featureEmoji}>🔟</ThemedText>
+            </View>
+            <View style={styles.featureBody}>
+              <ThemedText style={styles.featureTitle}>
+                {lang === "sn" ? "Mirairo Gumi" : "The Ten Commandments"}
+              </ThemedText>
+            </View>
+            <ThemedText style={styles.featureChevron}>›</ThemedText>
+          </Pressable>
 
           {/* Sections */}
           {HOME_SECTIONS.map((section) => (
@@ -93,7 +112,7 @@ const styles = StyleSheet.create({
   },
   brandRow: { flexDirection: "row", alignItems: "center", gap: 10 },
   brand: { color: Zim.red, fontSize: 34 },
-  tagline: { opacity: 0.55, fontSize: 14, marginTop: 2 },
+  tagline: { fontSize: 14, marginTop: 2 },
   accent: {
     flexDirection: "row",
     height: 6,
@@ -102,7 +121,31 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   langWrap: { alignItems: "flex-end", gap: 4, maxWidth: 140 },
-  langHint: { fontSize: 11, opacity: 0.5, textAlign: "right" },
+  langHint: { fontSize: 11, textAlign: "right" },
+  feature: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    backgroundColor: Zim.red,
+    borderRadius: 16,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    marginTop: 4,
+  },
+  featurePressed: { backgroundColor: Zim.redDark },
+  featureBubble: {
+    width: 52,
+    height: 52,
+    borderRadius: 14,
+    backgroundColor: "#ffffff33",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  featureEmoji: { fontSize: 26 },
+  featureBody: { flex: 1, gap: 2 },
+  featureTitle: { color: "#fff", fontSize: 18, fontWeight: "700" },
+  featureBlurb: { color: "#ffffffcc", fontSize: 13 },
+  featureChevron: { color: "#fff", fontSize: 28, fontWeight: "300" },
   section: { marginTop: 12, gap: 12 },
   sectionTitle: { fontSize: 20 },
   cards: { gap: 12 },
