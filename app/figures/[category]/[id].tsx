@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Zim } from '@/constants/theme';
-import { getFigure } from '@/data/figures';
+import { getCategory, getFigure } from '@/data/figures';
 import { useLanguage } from '@/hooks/use-language';
 
 export default function FigureDetailScreen() {
@@ -24,6 +24,7 @@ export default function FigureDetailScreen() {
   }
 
   const c = figure.content[lang];
+  const labels = getCategory(figure.category)?.fieldLabels;
 
   return (
     <ThemedView style={styles.container}>
@@ -36,11 +37,11 @@ export default function FigureDetailScreen() {
           <ThemedText style={styles.badgeText}>{c.nickname_meaning}</ThemedText>
         </View>
 
-        <Field label={lang === 'sn' ? 'Basa' : 'Profession'} value={c.original_profession} />
         <Field
-          label={lang === 'sn' ? 'Zvaanozivikanwa nazvo' : 'Known for'}
-          value={c.key_attribute}
+          label={labels ? labels.original_profession[lang] : c.original_profession}
+          value={c.original_profession}
         />
+        <Field label={labels ? labels.key_attribute[lang] : c.key_attribute} value={c.key_attribute} />
       </ScrollView>
     </ThemedView>
   );

@@ -18,8 +18,8 @@ export const Brand = {
 // Zimbabwe flag palette — used on the dashboard / "People in the Bible" flow.
 // Red is dominant, with green / gold / black as supporting accents.
 export const Zim = {
-  red: '#DE2010',
-  redDark: '#B71810',
+  red: '#8B0000', // deep dark red (used across the UI)
+  redDark: '#5C0000', // even darker, for pressed states
   green: '#00A651',
   gold: '#FDD116',
   black: '#141414',
