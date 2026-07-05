@@ -7,6 +7,7 @@ import { ActivityIndicator, View } from 'react-native';
 import 'react-native-reanimated';
 
 import { Brand, Colors } from '@/constants/theme';
+import { LanguageProvider } from '@/hooks/use-language';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -44,11 +45,13 @@ export default function RootLayout() {
           databaseName="AKJV.db"
           assetSource={{ assetId: require('@/assets/AKJV.db') }}
           useSuspense>
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-          </Stack>
-          <StatusBar style="dark" />
+          <LanguageProvider>
+            <Stack>
+              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+              <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+            </Stack>
+            <StatusBar style="dark" />
+          </LanguageProvider>
         </SQLiteProvider>
       </Suspense>
     </ThemeProvider>
