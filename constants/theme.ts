@@ -5,24 +5,35 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+// myble brand palette — purple on white.
+const purple = '#6D28D9';
+
+export const Brand = {
+  purple,
+  purpleDark: '#5B21B6',
+  purpleTint: '#F3EEFF', // light purple wash for highlights / chips
+  border: '#ECE8F5',
+};
+
+// myble is always light + purple, regardless of the system color scheme.
+const tintColorLight = purple;
+const tintColorDark = purple;
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
+    text: '#1C1B22',
+    background: '#FFFFFF',
     tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
+    icon: '#6E6A7C',
+    tabIconDefault: '#A9A4B8',
     tabIconSelected: tintColorLight,
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
+    text: '#1C1B22',
+    background: '#FFFFFF',
     tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
+    icon: '#6E6A7C',
+    tabIconDefault: '#A9A4B8',
     tabIconSelected: tintColorDark,
   },
 };
