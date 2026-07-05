@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Brand } from '@/constants/theme';
+import { Zim } from '@/constants/theme';
 import { getFigure } from '@/data/figures';
 import { useLanguage } from '@/hooks/use-language';
 
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
   name: { fontSize: 30 },
   badge: {
     alignSelf: 'flex-start',
-    backgroundColor: Brand.purpleTint,
+    backgroundColor: Zim.redTint,
     borderRadius: 999,
     paddingHorizontal: 14,
     paddingVertical: 6,
   },
-  badgeText: { color: Brand.purple, fontSize: 14, fontWeight: '700' },
+  badgeText: { color: Zim.red, fontSize: 14, fontWeight: '700' },
   field: { gap: 4, marginTop: 6 },
-  fieldLabel: { fontSize: 12, letterSpacing: 0.5, color: Brand.purple, fontWeight: '700' },
+  fieldLabel: { fontSize: 12, letterSpacing: 0.5, color: Zim.red, fontWeight: '700' },
   fieldValue: { fontSize: 16, lineHeight: 24 },
 });

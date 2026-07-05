@@ -1,11 +1,12 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
-import { Brand } from '@/constants/theme';
+import { Zim } from '@/constants/theme';
 import { useLanguage } from '@/hooks/use-language';
 import type { Lang } from '@/data/figures';
 
 const LABELS: Record<Lang, string> = { en: 'EN', sn: 'SN' };
+const COLORS: Record<Lang, string> = { en: Zim.red, sn: Zim.green };
 
 export function LanguageToggle() {
   const { lang, setLang } = useLanguage();
@@ -13,12 +14,15 @@ export function LanguageToggle() {
     <View style={styles.wrap}>
       {(['en', 'sn'] as Lang[]).map((l) => {
         const active = lang === l;
+        const color = COLORS[l];
         return (
           <Pressable
             key={l}
             onPress={() => setLang(l)}
-            style={[styles.pill, active && { backgroundColor: Brand.purple }]}>
-            <ThemedText style={[styles.label, active && styles.labelActive]}>{LABELS[l]}</ThemedText>
+            style={[styles.pill, active && { backgroundColor: color }]}>
+            <ThemedText style={[styles.label, { color: active ? '#fff' : color }]}>
+              {LABELS[l]}
+            </ThemedText>
           </Pressable>
         );
       })}
@@ -29,11 +33,10 @@ export function LanguageToggle() {
 const styles = StyleSheet.create({
   wrap: {
     flexDirection: 'row',
-    backgroundColor: Brand.purpleTint,
+    backgroundColor: '#F1F0F0',
     borderRadius: 999,
     padding: 3,
   },
   pill: { paddingHorizontal: 12, paddingVertical: 5, borderRadius: 999 },
-  label: { fontSize: 13, fontWeight: '700', color: Brand.purple },
-  labelActive: { color: '#fff' },
+  label: { fontSize: 13, fontWeight: '700' },
 });

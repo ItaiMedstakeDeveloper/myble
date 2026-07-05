@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Brand } from '@/constants/theme';
+import { Zim } from '@/constants/theme';
 import { getFigures, type CategoryMeta } from '@/data/figures';
 import { useLanguage } from '@/hooks/use-language';
 
@@ -35,7 +35,7 @@ export function CategoryCard({ category }: { category: CategoryMeta }) {
             : `${count} ${lang === 'sn' ? 'zvinhu' : 'entries'}`}
         </ThemedText>
       </View>
-      <IconSymbol name="chevron.right" size={22} color={Brand.purple} />
+      <IconSymbol name="chevron.right" size={22} color={Zim.red} />
     </Pressable>
   );
 }
@@ -48,16 +48,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: Brand.border,
+    borderColor: Zim.border,
     paddingVertical: 14,
     paddingHorizontal: 16,
   },
-  pressed: { backgroundColor: Brand.purpleTint },
+  pressed: { backgroundColor: Zim.redTint },
   emojiBubble: {
     width: 52,
     height: 52,
     borderRadius: 14,
-    backgroundColor: Brand.purpleTint,
+    backgroundColor: Zim.redTint,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -65,5 +65,5 @@ const styles = StyleSheet.create({
   body: { flex: 1, gap: 2 },
   title: { fontSize: 17 },
   blurb: { fontSize: 13, opacity: 0.6 },
-  meta: { fontSize: 12, color: Brand.purple, fontWeight: '600', marginTop: 2 },
+  meta: { fontSize: 12, color: Zim.red, fontWeight: '600', marginTop: 2 },
 });

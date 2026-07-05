@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
-import { Brand } from '@/constants/theme';
+import { Zim } from '@/constants/theme';
 import type { Figure } from '@/data/figures';
 import { useLanguage } from '@/hooks/use-language';
 
@@ -43,21 +43,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: Brand.border,
+    borderColor: Zim.border,
     padding: 16,
     gap: 6,
   },
-  pressed: { backgroundColor: Brand.purpleTint },
+  pressed: { backgroundColor: Zim.redTint },
   headerRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   name: { fontSize: 18, flexShrink: 1 },
   badge: {
-    backgroundColor: Brand.purpleTint,
+    backgroundColor: Zim.redTint,
     borderRadius: 999,
     paddingHorizontal: 10,
     paddingVertical: 3,
     flexShrink: 1,
   },
-  badgeText: { color: Brand.purple, fontSize: 11, fontWeight: '700' },
+  badgeText: { color: Zim.red, fontSize: 11, fontWeight: '700' },
   profession: { fontSize: 13, opacity: 0.6 },
   attribute: { fontSize: 14, lineHeight: 20, marginTop: 2 },
 });

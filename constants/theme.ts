@@ -15,6 +15,21 @@ export const Brand = {
   border: '#ECE8F5',
 };
 
+// Zimbabwe flag palette — used on the dashboard / "People in the Bible" flow.
+// Red is dominant, with green / gold / black as supporting accents.
+export const Zim = {
+  red: '#DE2010',
+  redDark: '#B71810',
+  green: '#00A651',
+  gold: '#FDD116',
+  black: '#141414',
+  white: '#FFFFFF',
+  redTint: '#FDEBEA', // light red wash for chips / pressed states
+  border: '#F3D9D6',
+  // Flag stripe order, top to bottom.
+  stripes: ['#00A651', '#FDD116', '#DE2010', '#141414', '#DE2010', '#FDD116', '#00A651'],
+};
+
 // myble is always light + purple, regardless of the system color scheme.
 const tintColorLight = purple;
 const tintColorDark = purple;
