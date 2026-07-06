@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a6b"/>
+      <stop offset="100%" stop-color="#0f1d38"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="240" rx="18" fill="url(#bg4)"/>
+  <circle cx="100" cy="88" r="58" fill="#f2c14e" opacity="0.25"/>
+  <ellipse cx="100" cy="60" rx="34" ry="10" fill="none" stroke="#f2c14e" stroke-width="4" opacity="0.9"/>
+  <circle cx="100" cy="95" r="46" fill="#2c4880"/>
+  <g fill="none" stroke="#f2c14e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100 74 Q78 82 74 100 Q88 96 100 104 Q112 96 126 100 Q122 82 100 74 Z"/>
+            <path d="M90 112 L110 112 L106 122 L94 122 Z"/>
+            <line x1="100" y1="122" x2="100" y2="128"/>
+         </g>
+  <text x="100" y="215" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#f5f0e6" text-anchor="middle">John</text>
+  <text x="100" y="232" font-family="Georgia, serif" font-size="11" fill="#f5f0e6" opacity="0.8" text-anchor="middle">Eagle &amp; Chalice</text>
+</svg>

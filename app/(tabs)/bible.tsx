@@ -9,7 +9,7 @@ import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { getBooks, getChapter, type Verse } from '@/lib/bible';
+import { getBooks, getChapter, getChapterCount, type Verse } from '@/lib/bible';
 
 export default function BibleScreen() {
   const db = useSQLiteContext();
@@ -43,6 +43,34 @@ export default function BibleScreen() {
     setHighlight(v);
     setPickerVisible(false);
   }
+
+  // Chapter paging — wraps across book boundaries.
+  const chapterCount = useMemo(() => getChapterCount(db, bookId), [db, bookId]);
+
+  function goTo(nextBookId: number, nextChapter: number) {
+    setBookId(nextBookId);
+    setChapter(nextChapter);
+    setHighlight(1);
+    listRef.current?.scrollToOffset({ offset: 0, animated: false });
+  }
+
+  function goNext() {
+    if (chapter < chapterCount) return goTo(bookId, chapter + 1);
+    const idx = books.findIndex((b) => b.id === bookId);
+    if (idx >= 0 && idx < books.length - 1) goTo(books[idx + 1].id, 1);
+  }
+
+  function goPrev() {
+    if (chapter > 1) return goTo(bookId, chapter - 1);
+    const idx = books.findIndex((b) => b.id === bookId);
+    if (idx > 0) {
+      const prev = books[idx - 1];
+      goTo(prev.id, getChapterCount(db, prev.id));
+    }
+  }
+
+  const isFirst = book?.id === books[0]?.id && chapter === 1;
+  const isLast = book?.id === books[books.length - 1]?.id && chapter === chapterCount;
 
   const highlightBg = '#EEEEEE';
 
@@ -81,6 +109,30 @@ export default function BibleScreen() {
             </View>
           )}
         />
+
+        {/* Chapter navigation arrows, centered at the bottom */}
+        <View style={styles.navBar} pointerEvents="box-none">
+          {isFirst ? (
+            <View style={styles.navBtn} />
+          ) : (
+            <Pressable
+              onPress={goPrev}
+              hitSlop={12}
+              style={({ pressed }) => [styles.navBtn, { opacity: pressed ? 0.85 : 0.45 }]}>
+              <IconSymbol name="chevron.left" size={34} color={Colors[scheme].text} />
+            </Pressable>
+          )}
+          {isLast ? (
+            <View style={styles.navBtn} />
+          ) : (
+            <Pressable
+              onPress={goNext}
+              hitSlop={12}
+              style={({ pressed }) => [styles.navBtn, { opacity: pressed ? 0.85 : 0.45 }]}>
+              <IconSymbol name="chevron.right" size={34} color={Colors[scheme].text} />
+            </Pressable>
+          )}
+        </View>
       </SafeAreaView>
 
       {book && (
@@ -111,4 +163,15 @@ const styles = StyleSheet.create({
   verseRow: { borderRadius: 6, paddingHorizontal: 4, paddingVertical: 2, marginBottom: 8 },
   verse: { lineHeight: 26, fontSize: 17 },
   verseNum: { opacity: 0.5, fontSize: 13 },
+  navBar: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 48,
+  },
+  navBtn: { width: 46, height: 46, alignItems: 'center', justifyContent: 'center' },
 });

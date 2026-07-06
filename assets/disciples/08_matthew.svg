@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg8" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e4d5c"/>
+      <stop offset="100%" stop-color="#0f262e"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="240" rx="18" fill="url(#bg8)"/>
+  <circle cx="100" cy="88" r="58" fill="#f2c14e" opacity="0.25"/>
+  <ellipse cx="100" cy="60" rx="34" ry="10" fill="none" stroke="#f2c14e" stroke-width="4" opacity="0.9"/>
+  <circle cx="100" cy="95" r="46" fill="#276073"/>
+  <g>
+            <path d="M90 82 Q100 68 110 82 L116 118 Q100 128 84 118 Z" fill="#f2c14e"/>
+            <line x1="90" y1="82" x2="110" y2="82" stroke="#276073" stroke-width="3"/>
+         </g>
+  <text x="100" y="215" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#f5f0e6" text-anchor="middle">Matthew</text>
+  <text x="100" y="232" font-family="Georgia, serif" font-size="11" fill="#f5f0e6" opacity="0.8" text-anchor="middle">Money Bag &amp; Book</text>
+</svg>

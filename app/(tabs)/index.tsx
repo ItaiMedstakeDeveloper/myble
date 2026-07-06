@@ -1,7 +1,3 @@
-import { useRouter } from "expo-router";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-
 import { CategoryCard } from "@/components/category-card";
 import { LanguageToggle } from "@/components/language-toggle";
 import { ThemedText } from "@/components/themed-text";
@@ -10,6 +6,9 @@ import { ZimFlag } from "@/components/zim-flag";
 import { Zim } from "@/constants/theme";
 import { CATEGORIES, HOME_SECTIONS } from "@/data/figures";
 import { useLanguage } from "@/hooks/use-language";
+import { useRouter } from "expo-router";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const { lang } = useLanguage();
@@ -52,9 +51,6 @@ export default function HomeScreen() {
             ]}
             onPress={() => router.push("/commandments")}
           >
-            <View style={styles.featureBubble}>
-              <ThemedText style={styles.featureEmoji}>🔟</ThemedText>
-            </View>
             <View style={styles.featureBody}>
               <ThemedText style={styles.featureTitle}>
                 {lang === "sn" ? "Mirairo Gumi" : "The Ten Commandments"}

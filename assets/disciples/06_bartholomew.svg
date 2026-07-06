@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5c1e4d"/>
+      <stop offset="100%" stop-color="#2e0f26"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="200" height="240" rx="18" fill="url(#bg6)"/>
+  <circle cx="100" cy="88" r="58" fill="#e8e4d0" opacity="0.25"/>
+  <ellipse cx="100" cy="60" rx="34" ry="10" fill="none" stroke="#e8e4d0" stroke-width="4" opacity="0.9"/>
+  <circle cx="100" cy="95" r="46" fill="#732660"/>
+  <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="M78 118 L108 88 Q116 80 122 86 Q128 92 120 100 L90 130 Z" fill="#e8e4d0"/>
+            <rect x="72" y="116" width="14" height="18" rx="3" transform="rotate(45 79 125)" fill="#8a5a2b"/>
+         </g>
+  <text x="100" y="215" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#f5f0e6" text-anchor="middle">Bartholomew</text>
+  <text x="100" y="232" font-family="Georgia, serif" font-size="11" fill="#f5f0e6" opacity="0.8" text-anchor="middle">Flaying Knife</text>
+</svg>

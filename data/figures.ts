@@ -14,7 +14,8 @@ export type FigureCategory = "disciple" | "prophet" | "woman";
 
 export type FigureContent = {
   name: string;
-  nickname_meaning: string;
+  /** Badge text (era/theme/etc.). Omitted for disciples, who show no badge. */
+  nickname_meaning?: string;
   original_profession: string;
   key_attribute: string;
 };
@@ -107,17 +108,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Simon Peter",
-        nickname_meaning: "Cephas/Peter (The Rock)",
         original_profession: "Fisherman",
-        key_attribute:
-          "Spokesman for the disciples, denied Jesus three times, later became a pillar of the early church.",
+        key_attribute: "Spokesman for the disciples, denied Jesus three times",
       },
       sn: {
         name: "Simoni Petro",
-        nickname_meaning: "Kefasi/Petro (Dombo)",
         original_profession: "Mubati wehove",
-        key_attribute:
-          "Aive mutauriri wevadzidzi, akaramba Jesu katatu, akazova mbiru yeChechi yekutanga.",
+        key_attribute: "Aive mutauriri wevadzidzi, akaramba Jesu katatu.",
       },
     },
   },
@@ -128,17 +125,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Andrew",
-        nickname_meaning: "The Brother of Simon Peter",
         original_profession: "Fisherman",
-        key_attribute:
-          "Brought his brother Simon to meet Jesus, known for his initial work of evangelism.",
+        key_attribute: "Brought his brother Simon to meet Jesus",
       },
       sn: {
         name: "Andireya",
-        nickname_meaning: "Mukoma waSimoni Petro",
         original_profession: "Mubati wehove",
-        key_attribute:
-          "Akaunza mukoma wake Simoni kuna Jesu, anozivikanwa nebasa rake rekutanga rekuparidza evhangeri.",
+        key_attribute: "Akaunza mukoma wake Simoni kuna Jesu",
       },
     },
   },
@@ -149,17 +142,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "James (Son of Zebedee)",
-        nickname_meaning: "Son of Thunder (Boanerges)",
         original_profession: "Fisherman",
-        key_attribute:
-          "Part of Jesus's inner circle, first of the 12 to be martyred.",
+        key_attribute: "First of the 12 to be martyred.",
       },
       sn: {
-        name: "Jakobho (Mwanakomana waZebhedheo)",
-        nickname_meaning: "Mwanakomana weKutinhira (Boanerigesi)",
+        name: "Jakobho",
         original_profession: "Mubati wehove",
-        key_attribute:
-          "Aive mumwe wevadzidzi vaive pedyo zvikuru naJesu, uye ndiye akatanga kuurayiwa pakati pevaapostora gumi nevaviri.",
+        key_attribute: "Akatanga kuurayiwa pakati pevaapostora gumi nevaviri.",
       },
     },
   },
@@ -170,17 +159,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "John",
-        nickname_meaning: "Son of Thunder (Boanerges)",
         original_profession: "Fisherman",
-        key_attribute:
-          "The 'disciple whom Jesus loved,' wrote the Gospel of John and the book of Revelation.",
+        key_attribute: "The 'disciple whom Jesus loved",
       },
       sn: {
         name: "Johani",
-        nickname_meaning: "Mwanakomana weKutinhira (Boanerigesi)",
         original_profession: "Mubati wehove",
-        key_attribute:
-          "Mudzidzi 'aidiwa naJesu,' akanyora Evhangeri yaJohani pamwe nebhuku raZvakazarurwa.",
+        key_attribute: "Mudzidzi 'aidiwa naJesu",
       },
     },
   },
@@ -191,17 +176,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Philip",
-        nickname_meaning: "Lover of Horses",
         original_profession: "Unspecified (from Bethsaida)",
-        key_attribute:
-          "Brought Nathanael to Jesus, known for his practical approach in seeking out the truth.",
+        key_attribute: "Brought Nathanael to Jesus.",
       },
       sn: {
         name: "Firipi",
-        nickname_meaning: "Anoda Mabhiza",
         original_profession: "Hazvina kutsanangurwa (aibva kuBhetsaidha)",
-        key_attribute:
-          "Akaunza Natanieri kuna Jesu, aizivikanwa nekutsvaga chokwadi nenzira ine hungwaru uye inoshanda.",
+        key_attribute: "Akaunza Natanieri kuna Jesu",
       },
     },
   },
@@ -212,17 +193,14 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Bartholomew",
-        nickname_meaning: "Son of Tolmai",
         original_profession: "Unspecified",
         key_attribute:
-          "Often identified as Nathanael, greeted by Jesus as an 'Israelite in whom there is no guile.'",
+          "Greeted by Jesus as 'Israelite in whom there is no guile.'",
       },
       sn: {
         name: "Bhatolomeo",
-        nickname_meaning: "Mwanakomana waTolimai",
         original_profession: "Hazvina kutsanangurwa",
-        key_attribute:
-          "Anowanzofungidzirwa kuti ndiye Natanieri, uyo Jesu akati ndiye 'muIsraeri asina kunyengera.'",
+        key_attribute: "Jesu akati ndiye 'muIsraeri asina kunyengera.'",
       },
     },
   },
@@ -233,17 +211,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Thomas",
-        nickname_meaning: "Didymus (The Twin)",
         original_profession: "Unspecified",
-        key_attribute:
-          "Famously doubted the resurrection until touching Jesus's wounds, later proclaimed Him 'My Lord and my God.'",
+        key_attribute: "Famously doubted the resurrection of Jesus's",
       },
       sn: {
         name: "Tomasi",
-        nickname_meaning: "Didhimo (Mapatya)",
         original_profession: "Hazvina kutsanangurwa",
-        key_attribute:
-          "Akakurumbira nekusahadzika rumuko rwaJesu kusvikira abata maronda ake, akazoti, 'Ishe wangu naMwari wangu.'",
+        key_attribute: "Akakurumbira nekusahadzika rumuko rwaJesu '",
       },
     },
   },
@@ -254,13 +228,11 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Matthew",
-        nickname_meaning: "Gift of the Lord",
         original_profession: "Tax Collector",
         key_attribute: "Also known as Levi, wrote the Gospel of Matthew.",
       },
       sn: {
         name: "Mateu",
-        nickname_meaning: "Chipo chaShe",
         original_profession: "Muteresi",
         key_attribute: "Aizivikanwawo saRevhi, akanyora Evhangeri yaMateu.",
       },
@@ -273,13 +245,11 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "James (Son of Alphaeus)",
-        nickname_meaning: "James the Less",
         original_profession: "Unspecified",
         key_attribute: "Distinguished from James the brother of John.",
       },
       sn: {
         name: "Jakobho (Mwanakomana waArifiyosi)",
-        nickname_meaning: "Jakobho Mudiki",
         original_profession: "Hazvina kutsanangurwa",
         key_attribute: "Anosiyaniswa naJakobho, mukoma waJohani.",
       },
@@ -292,17 +262,15 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Thaddaeus",
-        nickname_meaning: "Lebbaeus / Judas (Son of James)",
         original_profession: "Unspecified",
         key_attribute:
-          "Asked Jesus why He would reveal Himself only to the disciples and not the world.",
+          "Asked Jesus why he revealed himself only to the disciples",
       },
       sn: {
         name: "Tadheo",
-        nickname_meaning: "Rebheyosi / Judhasi (Mwanakomana waJakobho)",
         original_profession: "Hazvina kutsanangurwa",
         key_attribute:
-          "Akabvunza Jesu kuti sei aizozviratidza kuvadzidzi chete kwete kunyika yose.",
+          "Akabvunza Jesu kuti sei aizozviratidza kuvadzidzi chete",
       },
     },
   },
@@ -313,14 +281,11 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Simon the Zealot",
-        nickname_meaning: "The Zealot",
         original_profession: "Zealot (Political Rebel)",
-        key_attribute:
-          "Formerly part of a radical Jewish political group committed to overthrowing Roman rule.",
+        key_attribute: "Formerly part of a radical Jewish political group",
       },
       sn: {
         name: "Simoni muZealoti",
-        nickname_meaning: "MuZealoti",
         original_profession: "MuZealoti (Mupanduki wezvematongerwo enyika)",
         key_attribute:
           "Aimbove nhengo yeboka rechiJudha raizvipira kupidigura hutongi hweRoma.",
@@ -334,16 +299,13 @@ export const FIGURES: Figure[] = [
     content: {
       en: {
         name: "Judas Iscariot",
-        nickname_meaning: "Man of Kerioth",
         original_profession: "Treasurer",
-        key_attribute:
-          "The disciple who betrayed Jesus, later replaced by Matthias.",
+        key_attribute: "The disciple who betrayed Jesus",
       },
       sn: {
         name: "Judhasi Isikariyoti",
-        nickname_meaning: "Murume weKeriyoti",
         original_profession: "Muchengeti wemari",
-        key_attribute: "Mudzidzi akatengesa Jesu, akazotsiviwa naMatiasi.",
+        key_attribute: "Mudzidzi akatengesa Jesu",
       },
     },
   },
@@ -515,7 +477,8 @@ export const FIGURES: Figure[] = [
       sn: {
         name: "Obhadhiya",
         nickname_meaning: "Panguva yeUtapwa",
-        original_profession: "Kururamisira kwaMwari • Kuzvikudza • Tariro yeIsraeri",
+        original_profession:
+          "Kururamisira kwaMwari • Kuzvikudza • Tariro yeIsraeri",
         key_attribute:
           "Akataura kutongwa pamusoro perudzi rweEdhomu nekuda kweutsinye hwavo kuIsraeri panguva yekuwa kweJerusarema.",
       },
@@ -599,7 +562,8 @@ export const FIGURES: Figure[] = [
       sn: {
         name: "Habhakuki",
         nickname_meaning: "Pamberi peUtapwa",
-        original_profession: "Kururama kwaMwari pane zvakaipa • Kutenda munhamo",
+        original_profession:
+          "Kururama kwaMwari pane zvakaipa • Kutenda munhamo",
         key_attribute:
           "Akakurukura naMwari nezvedambudziko rezvakaipa uye kushandiswa kweBhabhironi kuranga Judha, achizogumisa nemashoko okuti 'akarurama achararama nokutenda kwake.'",
       },

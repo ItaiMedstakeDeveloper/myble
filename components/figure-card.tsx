@@ -1,8 +1,10 @@
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { Zim } from '@/constants/theme';
+import { getFigureIcon } from '@/data/figure-icons';
 import type { Figure } from '@/data/figures';
 import { useLanguage } from '@/hooks/use-language';
 
@@ -10,6 +12,7 @@ export function FigureCard({ figure }: { figure: Figure }) {
   const router = useRouter();
   const { lang } = useLanguage();
   const c = figure.content[lang];
+  const icon = getFigureIcon(figure.id);
 
   return (
     <Pressable
@@ -20,34 +23,45 @@ export function FigureCard({ figure }: { figure: Figure }) {
           params: { category: figure.category, id: figure.id },
         })
       }>
-      <View style={styles.headerRow}>
-        <ThemedText type="defaultSemiBold" style={styles.name} numberOfLines={1}>
-          {c.name}
-        </ThemedText>
-        <View style={styles.badge}>
-          <ThemedText style={styles.badgeText} numberOfLines={1}>
-            {c.nickname_meaning}
+      {icon != null && (
+        <Image source={icon} style={styles.art} contentFit="contain" transition={150} />
+      )}
+      <View style={styles.body}>
+        <View style={styles.headerRow}>
+          <ThemedText type="defaultSemiBold" style={styles.name} numberOfLines={1}>
+            {c.name}
           </ThemedText>
+          {figure.category !== 'disciple' && (
+            <View style={styles.badge}>
+              <ThemedText style={styles.badgeText} numberOfLines={1}>
+                {c.nickname_meaning}
+              </ThemedText>
+            </View>
+          )}
         </View>
+        <ThemedText style={styles.profession}>{c.original_profession}</ThemedText>
+        <ThemedText style={styles.attribute} numberOfLines={2}>
+          {c.key_attribute}
+        </ThemedText>
       </View>
-      <ThemedText style={styles.profession}>{c.original_profession}</ThemedText>
-      <ThemedText style={styles.attribute} numberOfLines={2}>
-        {c.key_attribute}
-      </ThemedText>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 16,
     borderWidth: 1,
     borderColor: Zim.border,
     padding: 16,
-    gap: 6,
+    gap: 12,
   },
   pressed: { backgroundColor: Zim.redTint },
+  art: { width: 110, height: 132, borderRadius: 12 },
+  body: { flex: 1, gap: 6 },
   headerRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   name: { fontSize: 18, flexShrink: 1 },
   badge: {
