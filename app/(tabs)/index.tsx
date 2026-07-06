@@ -44,14 +44,6 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          {/* Zimbabwe accent bar — red dominant */}
-          <View style={styles.accent}>
-            <View style={{ flex: 1, backgroundColor: Zim.green }} />
-            <View style={{ flex: 1, backgroundColor: Zim.gold }} />
-            <View style={{ flex: 6, backgroundColor: Zim.red }} />
-            <View style={{ flex: 1, backgroundColor: Zim.black }} />
-          </View>
-
           {/* Featured: The Ten Commandments */}
           <Pressable
             style={({ pressed }) => [
@@ -113,13 +105,6 @@ const styles = StyleSheet.create({
   brandRow: { flexDirection: "row", alignItems: "center", gap: 10 },
   brand: { color: Zim.red, fontSize: 34 },
   tagline: { fontSize: 14, marginTop: 2 },
-  accent: {
-    flexDirection: "row",
-    height: 6,
-    borderRadius: 3,
-    overflow: "hidden",
-    marginBottom: 4,
-  },
   langWrap: { alignItems: "flex-end", gap: 4, maxWidth: 140 },
   langHint: { fontSize: 11, textAlign: "right" },
   feature: {

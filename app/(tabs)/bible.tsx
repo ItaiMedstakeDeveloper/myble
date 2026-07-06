@@ -7,7 +7,7 @@ import { BiblePicker, type PickerSelection } from '@/components/bible-picker';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Brand, Colors } from '@/constants/theme';
+import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { getBooks, getChapter, type Verse } from '@/lib/bible';
 
@@ -44,7 +44,7 @@ export default function BibleScreen() {
     setPickerVisible(false);
   }
 
-  const highlightBg = Brand.purpleTint;
+  const highlightBg = '#EEEEEE';
 
   return (
     <ThemedView style={styles.container}>

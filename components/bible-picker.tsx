@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Brand, Colors } from '@/constants/theme';
+import { Colors, Zim } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { useThemeColor } from '@/hooks/use-theme-color';
 import {
@@ -32,10 +32,10 @@ type Props = {
 export function BiblePicker({ visible, onClose, book, chapter, onSelect }: Props) {
   const db = useSQLiteContext();
   const scheme = useColorScheme() ?? 'light';
-  const tint = Colors[scheme].tint;
+  const tint = Zim.black; // selected book/chapter/verse is black, not purple
   const background = useThemeColor({}, 'background');
-  const border = Brand.border;
-  const chip = Brand.purpleTint;
+  const border = '#E3E3E3';
+  const chip = '#F0F0F0';
 
   const [tab, setTab] = useState<Tab>('books');
   const [testament, setTestament] = useState<Testament>('old');
