@@ -1,3 +1,4 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
 import { FlatList, Pressable, StyleSheet, TextInput, View } from "react-native";
@@ -9,6 +10,7 @@ import { IconSymbol } from "@/components/ui/icon-symbol";
 import { Zim } from "@/constants/theme";
 import { SONGS } from "@/data/songs";
 import { useLanguage } from "@/hooks/use-language";
+import { formatSongForShare, shareViaWhatsApp } from "@/lib/share";
 
 export default function SongsScreen() {
   const { lang } = useLanguage();
@@ -91,6 +93,20 @@ export default function SongsScreen() {
                   {item.title}
                 </ThemedText>
               </View>
+              <Pressable
+                style={({ pressed }) => [
+                  styles.shareBtn,
+                  pressed && styles.sharePressed,
+                ]}
+                onPress={() => shareViaWhatsApp(formatSongForShare(item))}
+                hitSlop={8}
+                accessibilityRole="button"
+                accessibilityLabel={
+                  lang === "sn" ? "Tumira neWhatsApp" : "Share via WhatsApp"
+                }
+              >
+                <Ionicons name="logo-whatsapp" size={22} color="#25D366" />
+              </Pressable>
               <IconSymbol name="chevron.right" size={20} color={Zim.red} />
             </Pressable>
           )}
@@ -146,6 +162,15 @@ const styles = StyleSheet.create({
   numberText: { color: Zim.red, fontSize: 14, fontWeight: "700" },
   cardBody: { flex: 1 },
   cardTitle: { fontSize: 17 },
+  shareBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#E9F9EF",
+  },
+  sharePressed: { opacity: 0.6 },
   empty: { padding: 32, alignItems: "center" },
   emptyText: { color: "#9A8A88", fontSize: 15 },
 });
