@@ -1,14 +1,28 @@
-import { StyleSheet, View } from "react-native";
+import { useRouter } from "expo-router";
+import { useMemo, useState } from "react";
+import { FlatList, Pressable, StyleSheet, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { Zim } from "@/constants/theme";
+import { SONGS } from "@/data/songs";
 import { useLanguage } from "@/hooks/use-language";
 
 export default function SongsScreen() {
   const { lang } = useLanguage();
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return SONGS;
+    return SONGS.filter(
+      (s) =>
+        s.title.toLowerCase().includes(q) || s.lyrics.toLowerCase().includes(q),
+    );
+  }, [query]);
 
   return (
     <ThemedView style={styles.container}>
@@ -19,14 +33,68 @@ export default function SongsScreen() {
           </ThemedText>
         </View>
 
-        <View style={styles.center}>
-          <View style={styles.bubble}>
-            <IconSymbol name="music.note.list" size={44} color={Zim.red} />
-          </View>
-          <ThemedText style={styles.empty}>
-            {lang === "sn" ? "Nziyo dziri kuuya" : "Songs coming soon"}
-          </ThemedText>
+        <View style={styles.searchWrap}>
+          <IconSymbol name="magnifyingglass" size={18} color={Zim.red} />
+          <TextInput
+            style={styles.searchInput}
+            value={query}
+            onChangeText={setQuery}
+            placeholder={lang === "sn" ? "Tsvaka nziyo..." : "Search songs..."}
+            placeholderTextColor="#9A8A88"
+            autoCapitalize="none"
+            autoCorrect={false}
+            returnKeyType="search"
+            clearButtonMode="while-editing"
+          />
+          {query.length > 0 && (
+            <Pressable
+              onPress={() => setQuery("")}
+              hitSlop={8}
+              accessibilityLabel="Clear search"
+            >
+              <IconSymbol name="xmark" size={18} color={Zim.red} />
+            </Pressable>
+          )}
         </View>
+
+        <FlatList
+          data={filtered}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.listContent}
+          keyboardShouldPersistTaps="handled"
+          ListEmptyComponent={
+            <View style={styles.empty}>
+              <ThemedText style={styles.emptyText}>
+                {lang === "sn" ? "Hapana nziyo dzakawanikwa" : "No songs found"}
+              </ThemedText>
+            </View>
+          }
+          renderItem={({ item, index }) => (
+            <Pressable
+              style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+              onPress={() =>
+                router.push({
+                  pathname: "/songs/[id]",
+                  params: { id: item.id },
+                })
+              }
+            >
+              <View style={styles.numberBadge}>
+                <ThemedText style={styles.numberText}>{index + 1}</ThemedText>
+              </View>
+              <View style={styles.cardBody}>
+                <ThemedText
+                  type="defaultSemiBold"
+                  style={styles.cardTitle}
+                  numberOfLines={2}
+                >
+                  {item.title}
+                </ThemedText>
+              </View>
+              <IconSymbol name="chevron.right" size={20} color={Zim.red} />
+            </Pressable>
+          )}
+        />
       </SafeAreaView>
     </ThemedView>
   );
@@ -36,14 +104,48 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   header: { paddingHorizontal: 16, paddingTop: 8, paddingBottom: 12 },
   title: { color: Zim.red, fontSize: 30 },
-  center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 16 },
-  bubble: {
-    width: 88,
-    height: 88,
-    borderRadius: 24,
+  searchWrap: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginHorizontal: 16,
+    marginBottom: 4,
+    paddingHorizontal: 14,
+    height: 44,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: Zim.border,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 16,
+    color: Zim.black,
+    paddingVertical: 0,
+  },
+  listContent: { padding: 16, gap: 10, paddingBottom: 40 },
+  card: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    backgroundColor: "#fff",
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: Zim.border,
+    padding: 16,
+  },
+  pressed: { backgroundColor: Zim.redTint },
+  numberBadge: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
     backgroundColor: Zim.redTint,
     alignItems: "center",
     justifyContent: "center",
   },
-  empty: { fontSize: 16, opacity: 0.6 },
+  numberText: { color: Zim.red, fontSize: 14, fontWeight: "700" },
+  cardBody: { flex: 1 },
+  cardTitle: { fontSize: 17 },
+  empty: { padding: 32, alignItems: "center" },
+  emptyText: { color: "#9A8A88", fontSize: 15 },
 });

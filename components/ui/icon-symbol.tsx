@@ -25,6 +25,7 @@ const MAPPING = {
   "book.fill": "menu-book",
   "music.note.list": "queue-music",
   "line.3.horizontal": "menu",
+  magnifyingglass: "search",
   xmark: "close",
 } as IconMapping;
 /**
