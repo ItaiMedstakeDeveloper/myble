@@ -41,7 +41,7 @@ Hallelujah, one more time (hallelujah) hande
 Toimba hallelujah (hallelujah, hallelujah)
 Nhasi hallelujah (hallelujah, hallelujah)
 Hallelujah (hallelujah, hallelujah)
-Hallelujah (hallelujah), makanaka Jesu (hallelujah)`
+Hallelujah (hallelujah), makanaka Jesu (hallelujah)`,
   },
   {
     id: "ndinoshamiswa-kwazvo",
@@ -72,13 +72,12 @@ Rumbidza iwe nyika!
 Rumbidza iwe gungwa!
 Nesu ngatirumbidze!
 Uyu musiki wedu,
-Ane rudo rukuru.`
+Ane rudo rukuru.`,
   },
   {
     id: "garai-neni",
     title: "Garai Neni",
-    lyrics: `AFM Shona Hymn 155
-
+    lyrics: `
 1. Mwari, Baba wangu, Ndinoona vanhu
 Vakasiya nzira yenyu. Vaari varasiki;
 Garai neni, garai neni
@@ -102,13 +101,12 @@ Nekusingaperi.
 5. Kuti ndichichema nematambudziko,
 Achapera ndichafara, Baba, garai neni,
 Garai neni, garai neni
-Nekusingaperi.`
+Nekusingaperi.`,
   },
   {
     id: "nditungamirei-jehova",
     title: "Nditungamirei Jehova",
-    lyrics: `AFM Shona Hymn 62
-
+    lyrics: `
 1. Nditungamire, Jehovha,
 Ndiri mufambi Ishe;
 Une simba, ini handina,
@@ -128,7 +126,7 @@ Chibvisa kutya kwangu;
 Ndiperekedze ndouya,
 Chindichengeta ini,
 O M'ponisi!
-Iwe ndovimba newe.`
+Iwe ndovimba newe.`,
   },
   {
     id: "ndoda-mwari-muyamuri",
@@ -161,7 +159,7 @@ Munondipa simba
 Ndoda ndoda ndoda
 Mwari muyamuri uri wangu
 Ndakatengwa neropa raIshe
-Ndava wenyu chose`
+Ndava wenyu chose`,
   },
   {
     id: "you-are-yahweh",
@@ -191,17 +189,7 @@ You are Yahweh
 
 Faith is rising right now
 The power of God is rising right now
-Let your voices express this, says He`
-  },
-  {
-    id: "ndinoda-iwe",
-    title: "Ndinoda iwe",
-    lyrics: `Ndinoda Iwe,
-Mwari wangu,
-Ndinoda Iwe,
-Nemoyo wangu wose.
-
-(Lyrics to be completed...)`
+Let your voices express this, says He`,
   },
   {
     id: "all-my-life-you-have-been-faithful",
@@ -254,7 +242,7 @@ Oh, I'm gonna sing of the goodness of God
 
 [Outro]
 I will sing of the goodness of God
-Oh, I'm gonna sing of the goodness of God`
+Oh, I'm gonna sing of the goodness of God`,
   },
   {
     id: "open-the-floodgates",
@@ -291,7 +279,7 @@ Refresh us
 We're running dry, oh God
 Send the revival, Lord
 Send the rain, oh God
-Let it rain`
+Let it rain`,
   },
   {
     id: "jehovah-is-your-name",
@@ -331,31 +319,42 @@ He's the same yesterday, today and forever
 Mighty Warrior
 And He's great
 Jehovah is Your Name
-
-Hallelujah, Hallelujah, Hallelujah`
+Hallelujah, Hallelujah, Hallelujah`,
   },
   {
     id: "agere-pachigaro",
     title: "Agere Pachigaro",
-    lyrics: `Agere pachigaro cheushe
-Ndinosimudza maoko angu
-Kunamata Imi, Mambo wemadzimambo
-
-(Lyrics to be completed...)`
+    lyrics: `Agere pachigaro
+Agere pachigaro
+Jesu mutsvene
+Ishe wemadzishe
+Uhlel'esihlaweni
+Sihlalo sobukhosi
+Uyingcwele
+Nkosi yamakhosi
+Changamire muponesi
+Changamire muponesi
+Ngirozi dzinokuombera
+Ishe wemadzishe`,
   },
   {
     id: "take-all-the-glory",
     title: "Take all the glory",
     lyrics: `Take all the glory, Lord
-Take all the honor
-Take all the glory, Lord
-Take all the honor
+Take all the glory
+All the Glory
+Ohh Mighty God
 
-For You are worthy, Lord
-You are worthy
-You are worthy to be praised!
+Take all the glory
+All the Glory
+Ohh Lord
 
-(Lyrics to be completed...)`
+Chorus:
+For your Faithfulness
+Your Power and your Love
+Take all the glory
+All the Glory
+Ohh Lord`,
   },
   {
     id: "hakuna-zita-sera-jesu",
@@ -389,8 +388,243 @@ Kune hama dzavo.
 5. NdiJesu anoenda nesu
 Kwese tinoenda,
 NdiJesu anotibatsira
-Muupenyu hwedu.`
-  }
+Muupenyu hwedu.`,
+  },
+  {
+    id: "makanaka-jesu-munoshamisa",
+    title: "Makanaka Jesu Munoshamisa",
+    lyrics: `Makanaka, Jeso munoshamisa (You are wonderful Jesus, You are amazing) Munoita minana nezviratidzo (You do wonders and miracles) (repeat)
+    Minana, Minana, Minana nezviratidzo (You do, you perform miracles)
+    Makanaka Jesu mandishamisa (You are wonderful Jesus, You amaze me) Munoita minana nezviratidzo (You do wonders and miracles) (Repeat)
+    Minana, Minana, Minana nezviratidzo (You do, you perform miracles)`,
+  },
+  {
+    id: "makanaka-jesu-munoshamisa",
+    title: "Jesu Makanaka",
+    lyrics: `Jesu Makanaka Hiya
+    Jesu Makanaka Hiya 
+    Jesu Makanaka Hiya
+    Hiya Hiya Hiya Hiya Hiya Hiya`,
+  },
+  {
+    id: "makanaka-jesu",
+    title: "Makanaka Jesu (Jesus You are Good)",
+    lyrics: `Makanaka Jesu (Jesus You are Good)
+Makanaka Jesu (Jesus You are Good)
+Simudza ruoko, ruoko uchiti (We raise our hands and say)
+Makanaka Jesu (Jesus You are Good) (Repeat)
+
+You are holy Oh God
+You are holy Oh God
+As we lift our voices in adoration
+You are holy Oh God (Repeat)
+
+Tinotenda Jesu (We thank You Jesus)
+Tinotenda Jesu (We thank You Jesus)
+Simudza ruoko, ruoko uchiti (We raise our hands and say)
+Tinotenda Jesu (We thank You Jesus) (Repeat)
+
+Simudza ruoko, ruoko uchiti (We raise our hands and say)
+Tinotenda Jesu (We thank You Jesus) (Repeat)
+
+You are awesome Oh God
+You are awesome Oh God
+As we lift our voices in adoration
+You are awesome Oh God
+
+Makanaka Jesu (Jesus You are Good)
+Makanaka Jesu (Jesus You are Good)
+Simudza ruoko, ruoko uchiti (We raise our hands and say)
+Makanaka Jesu (Jesus You are Good) (Repeat)
+
+Simudza ruoko, ruoko uchiti (We raise our hands and say)
+Makanaka Jesu (Jesus You are Good) (Repeat)
+
+You are awesome Oh God
+You are awesome Oh God
+As we lift our voices in adoration
+You are awesome Oh God`,
+  },
+  {
+    id: "torumbidza-zita-renyu",
+    title: "Torumbidza Zita Renyu,",
+    lyrics: `Tonamata Zita Renyu,Totenda kunaka kwenyu Mwari/Jesu.(We worship Your name, we thank You for Your goodness, Lord)Hallelujah, totenda kunaka,Totenda kunaka kwenyu Mwari.(Hallelujah, we thank You for Your goodness)Simudza maoko ako urumbidzei Mwari,Nokuti ndiye ega wakarurama.(Lift up your hands and praise God, for He alone is righteous)Toimba torumbidza,Totenda kunaka kwenyu Jesu.`,
+  },
+  {
+    id: "hakuna-wakaita-sajesu",
+    title: "Hakuna wakaita saJesu",
+    lyrics: `"Hakuna Wakaita sa Jesu, 
+haku hakunaba/hakuchina.
+ 
+Ndamhanyamhanya kwese kwese,
+Ndatenderera kwese kwese,
+Ndatsvagatsvaga kwese kwese,
+Haku hakunaba/hakuchina."
+
+Swahili:
+"Hakuna Mungu kama wewe, 
+Hakuna na hatakuwepo
+
+Nimetembea kote kote,
+Nimezunguka kote kote,
+Nimetafuta kote kote,
+Hakuna na hatakuwepo."
+
+English (singing translation):
+"There's no one, there's no one like Jesus.
+There's no one, there's no one like him.
+
+I've walked and walked all over, over.
+I turned and turned all over, over.
+I've searched and searched all over, over.
+There's no one, there's no one like him.
+
+English (literal translation):
+"There is no God like you.
+There isn't, nor will their ever be!
+
+I've walked everywhere,
+I've circled/turned everywhere,
+I've searched everywhere. 
+There isn't, nor will there ever be!"
+
+A musical setting in Shona appea`,
+  },
+  {
+    id: "hakuna-wakaita-sajesu",
+    title: "Hakuna wakaita saJesu",
+    lyrics: `"Hakuna Wakaita sa Jesu, 
+haku hakunaba/hakuchina.
+ 
+Ndamhanyamhanya kwese kwese,
+Ndatenderera kwese kwese,
+Ndatsvagatsvaga kwese kwese,
+Haku hakunaba/hakuchina."
+
+Swahili:
+"Hakuna Mungu kama wewe, 
+Hakuna na hatakuwepo
+
+Nimetembea kote kote,
+Nimezunguka kote kote,
+Nimetafuta kote kote,
+Hakuna na hatakuwepo."
+
+English (singing translation):
+"There's no one, there's no one like Jesus.
+There's no one, there's no one like him.
+
+I've walked and walked all over, over.
+I turned and turned all over, over.
+I've searched and searched all over, over.
+There's no one, there's no one like him.
+
+English (literal translation):
+"There is no God like you.
+There isn't, nor will their ever be!
+
+I've walked everywhere,
+I've circled/turned everywhere,
+I've searched everywhere. 
+There isn't, nor will there ever be!"
+
+A musical setting in Shona appea`,
+  },
+
+  {
+    id: "hakuna-wakaita-sajesu",
+    title: "Hakuna wakaita saJesu",
+    lyrics: `"Hakuna Wakaita sa Jesu, 
+haku hakunaba/hakuchina.
+ 
+Ndamhanyamhanya kwese kwese,
+Ndatenderera kwese kwese,
+Ndatsvagatsvaga kwese kwese,
+Haku hakunaba/hakuchina."
+
+Swahili:
+"Hakuna Mungu kama wewe, 
+Hakuna na hatakuwepo
+
+Nimetembea kote kote,
+Nimezunguka kote kote,
+Nimetafuta kote kote,
+Hakuna na hatakuwepo."
+
+English (singing translation):
+"There's no one, there's no one like Jesus.
+There's no one, there's no one like him.
+
+I've walked and walked all over, over.
+I turned and turned all over, over.
+I've searched and searched all over, over.
+There's no one, there's no one like him.
+
+English (literal translation):
+"There is no God like you.
+There isn't, nor will their ever be!
+
+I've walked everywhere,
+I've circled/turned everywhere,
+I've searched everywhere. 
+There isn't, nor will there ever be!"
+
+A musical setting in Shona appea`,
+  },
+  {
+    id: "jesu-indombo",
+    title: "Jesu Idombo",
+    lyrics: `"Jesu idombo
+Jesu idombo
+Jesu idombo narinhi
+Narinhi Narinhi
+Jesu Idombo
+Kusvikira narinhi
+
+Ndogara naye
+Ndogara naye
+Ndogara naye narinhi
+narinhi Narinhi ndogara naye kusvika narinhi
+
+Ndomutevera ndomutevera
+Ndomutevera narinhi 
+Narinhi narinhi 
+Ndomutevera kusvikira narinhi`,
+  },
+  {
+    id: "hakuna-zita",
+    title: "Hakuna Zita Sera Jesu",
+    lyrics: `"1.HAKUNA zita sera Jesu,
+Kana nokudenga,
+Hakuna rimwe rakadaro,
+Zita raM’ponesi.
+
+Korus:
+Tinoda kuimbira Jesu,
+Tichimupa mbiri,
+Ngekuti hatizivi zita
+Rinokunda iri.
+
+2. NdiJesu wakafira vese,
+Wakatida kwazvo,
+Zvotanga takaraswa zvedu.
+Ngezvitadzo zvedu.
+
+3. NdiJesu wakaita nyasha,
+Takamukanganwa,
+Wakati, “Enda hako mwana,
+Usazotadzazve.”
+
+4. NdiJesu wakarapa vanhu,
+Akavasimbisa,
+NdiJesu wakamutsa vafi
+Kune hama dzavo.
+
+5. NdiJesu anoenda nesu
+Kwese tinoenda,
+NdiJesu anotibatsira
+Muupenyu hwedu.`,
+  },
 ];
 
 export function getSong(id: string): Song | undefined {
