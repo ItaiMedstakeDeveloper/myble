@@ -27,6 +27,13 @@ const MAPPING = {
   "line.3.horizontal": "menu",
   magnifyingglass: "search",
   xmark: "close",
+  plus: "add",
+  pencil: "edit",
+  trash: "delete",
+  "square.and.arrow.up": "share",
+  "person.fill": "person",
+  calendar: "event",
+  "note.text": "sticky-note-2",
 } as IconMapping;
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
