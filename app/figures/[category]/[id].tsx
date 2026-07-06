@@ -13,6 +13,7 @@ import {
   type DiscipleDetail,
 } from '@/data/disciples-detail';
 import { getProphetDetail, type ProphetDetail } from '@/data/prophets-detail';
+import { getWomanDetail, type WomanDetail } from '@/data/women-detail';
 import { useLanguage } from '@/hooks/use-language';
 
 export default function FigureDetailScreen() {
@@ -35,7 +36,12 @@ export default function FigureDetailScreen() {
   const labels = getCategory(figure.category)?.fieldLabels;
   const detail = getDiscipleDetail(figure.id);
   const prophet = getProphetDetail(figure.id);
+  const woman = getWomanDetail(figure.id);
   const icon = getFigureIcon(figure.id);
+
+  // Badge: disciples show none; women show their title epithet; everyone else
+  // (prophets, and any figure without rich detail) shows the theme/era.
+  const badgeText = detail ? undefined : woman ? woman.title[lang] : c.nickname_meaning;
 
   return (
     <ThemedView style={styles.container}>
@@ -48,9 +54,9 @@ export default function FigureDetailScreen() {
         <ThemedText type="title" style={styles.name}>
           {c.name}
         </ThemedText>
-        {!detail && (
+        {badgeText != null && (
           <View style={styles.badge}>
-            <ThemedText style={styles.badgeText}>{c.nickname_meaning}</ThemedText>
+            <ThemedText style={styles.badgeText}>{badgeText}</ThemedText>
           </View>
         )}
 
@@ -64,6 +70,8 @@ export default function FigureDetailScreen() {
             keyThemes={c.original_profession}
             summary={c.key_attribute}
           />
+        ) : woman ? (
+          <WomanSections woman={woman} lang={lang} summary={c.key_attribute} />
         ) : (
           <>
             <Field
@@ -172,6 +180,49 @@ function ProphetSections({
         tag={prophet.legacyTradition ? traditionTag : undefined}
       />
       <Field label={PROPHET_LABELS.reference[lang]} value={prophet.reference} />
+
+      <ThemedText style={styles.note}>{SOURCE_NOTE[lang]}</ThemedText>
+    </>
+  );
+}
+
+const WOMAN_LABELS = {
+  summary: { en: 'Summary', sn: 'Pfupiso' },
+  background: { en: 'Background', sn: 'Nhoroondo yake' },
+  historicalContext: { en: 'Historical context', sn: 'Mamiriro enguva' },
+  notableMoments: { en: 'Notable moments', sn: 'Zviitiko zvinokosha' },
+  legacy: { en: 'Legacy', sn: 'Nhaka' },
+  reference: { en: 'Scripture references', sn: 'Marugwaro' },
+  tradition: { en: 'Tradition', sn: 'Tsika' },
+} as const;
+
+function WomanSections({
+  woman,
+  lang,
+  summary,
+}: {
+  woman: WomanDetail;
+  lang: 'en' | 'sn';
+  summary: string;
+}) {
+  return (
+    <>
+      <Field label={WOMAN_LABELS.summary[lang]} value={summary} />
+      <Field label={WOMAN_LABELS.background[lang]} value={woman.background[lang]} />
+      <Field
+        label={WOMAN_LABELS.historicalContext[lang]}
+        value={woman.historicalContext[lang]}
+      />
+      <ListField
+        label={WOMAN_LABELS.notableMoments[lang]}
+        items={woman.notableMoments[lang]}
+      />
+      <Field
+        label={WOMAN_LABELS.legacy[lang]}
+        value={woman.legacy[lang]}
+        tag={woman.legacyTradition ? WOMAN_LABELS.tradition[lang] : undefined}
+      />
+      <Field label={WOMAN_LABELS.reference[lang]} value={woman.reference} />
 
       <ThemedText style={styles.note}>{SOURCE_NOTE[lang]}</ThemedText>
     </>

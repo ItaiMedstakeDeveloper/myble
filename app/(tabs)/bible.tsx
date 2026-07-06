@@ -7,7 +7,7 @@ import { BiblePicker, type PickerSelection } from '@/components/bible-picker';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
+import { Colors, Zim } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { getBooks, getChapter, getChapterCount, type Verse } from '@/lib/bible';
 
@@ -110,26 +110,30 @@ export default function BibleScreen() {
           )}
         />
 
-        {/* Chapter navigation arrows, centered at the bottom */}
+        {/* Floating chapter navigation arrows, centered near the bottom */}
         <View style={styles.navBar} pointerEvents="box-none">
-          {isFirst ? (
-            <View style={styles.navBtn} />
-          ) : (
+          {!isFirst && (
             <Pressable
               onPress={goPrev}
               hitSlop={12}
-              style={({ pressed }) => [styles.navBtn, { opacity: pressed ? 0.85 : 0.45 }]}>
-              <IconSymbol name="chevron.left" size={34} color={Colors[scheme].text} />
+              style={({ pressed }) => [
+                styles.navBtn,
+                { backgroundColor: Colors[scheme].background },
+                pressed && styles.navBtnPressed,
+              ]}>
+              <IconSymbol name="chevron.left" size={30} color={Zim.red} />
             </Pressable>
           )}
-          {isLast ? (
-            <View style={styles.navBtn} />
-          ) : (
+          {!isLast && (
             <Pressable
               onPress={goNext}
               hitSlop={12}
-              style={({ pressed }) => [styles.navBtn, { opacity: pressed ? 0.85 : 0.45 }]}>
-              <IconSymbol name="chevron.right" size={34} color={Colors[scheme].text} />
+              style={({ pressed }) => [
+                styles.navBtn,
+                { backgroundColor: Colors[scheme].background },
+                pressed && styles.navBtnPressed,
+              ]}>
+              <IconSymbol name="chevron.right" size={30} color={Zim.red} />
             </Pressable>
           )}
         </View>
@@ -167,11 +171,26 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    bottom: 16,
+    bottom: 24,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 48,
+    gap: 56,
   },
-  navBtn: { width: 46, height: 46, alignItems: 'center', justifyContent: 'center' },
+  navBtn: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: Zim.border,
+    // Soft floating shadow (iOS) / elevation (Android).
+    shadowColor: '#000',
+    shadowOpacity: 0.18,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 5,
+  },
+  navBtnPressed: { opacity: 0.7, transform: [{ scale: 0.94 }] },
 });

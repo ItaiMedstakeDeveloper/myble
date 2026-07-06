@@ -698,7 +698,7 @@ export const FIGURES: Figure[] = [
   {
     id: "deborah",
     category: "woman",
-    order: 3,
+    order: 4,
     content: {
       en: {
         name: "Deborah",
@@ -719,7 +719,7 @@ export const FIGURES: Figure[] = [
   {
     id: "ruth",
     category: "woman",
-    order: 4,
+    order: 6,
     content: {
       en: {
         name: "Ruth",
@@ -740,7 +740,7 @@ export const FIGURES: Figure[] = [
   {
     id: "esther",
     category: "woman",
-    order: 5,
+    order: 10,
     content: {
       en: {
         name: "Esther",
@@ -761,7 +761,7 @@ export const FIGURES: Figure[] = [
   {
     id: "mary-mother-of-jesus",
     category: "woman",
-    order: 6,
+    order: 11,
     content: {
       en: {
         name: "Mary (Mother of Jesus)",
@@ -782,7 +782,7 @@ export const FIGURES: Figure[] = [
   {
     id: "mary-magdalene",
     category: "woman",
-    order: 7,
+    order: 12,
     content: {
       en: {
         name: "Mary Magdalene",
@@ -803,7 +803,7 @@ export const FIGURES: Figure[] = [
   {
     id: "priscilla",
     category: "woman",
-    order: 8,
+    order: 14,
     content: {
       en: {
         name: "Priscilla",
@@ -818,6 +818,132 @@ export const FIGURES: Figure[] = [
         original_profession: "Mabasa 18; VaRoma 16",
         key_attribute:
           "Mutungamiri wechiKristu wekutanga ane mukurumbira uye muiti wematende. Pamwe nemurume wake Akwira, akafamba nemuapostora Pauro uye akashandisa kunzwisisa kwake kwakadzika kweBhaibheri kudzidzisa nekururamisa vatungamiri vechechi.",
+      },
+    },
+  },
+  {
+    id: "rahab",
+    category: "woman",
+    order: 3,
+    content: {
+      en: {
+        name: "Rahab",
+        nickname_meaning: "Faith & Courage",
+        original_profession: "Joshua 2; 6",
+        key_attribute:
+          "Risked her life to hide Israelite spies in Jericho, trusting in the God of Israel over loyalty to her own city.",
+      },
+      sn: {
+        name: "Rahabhi",
+        nickname_meaning: "Kutenda & Ushingi",
+        original_profession: "Joshua 2; 6",
+        key_attribute:
+          "Akaisa upenyu hwake panjodzi achiviga vasori vevaIsraeri muJeriko, achivimba naMwari waIsraeri panzvimbo pokutendeka kuguta rake.",
+      },
+    },
+  },
+  {
+    id: "jael",
+    category: "woman",
+    order: 5,
+    content: {
+      en: {
+        name: "Jael",
+        nickname_meaning: "Valour & Deliverance",
+        original_profession: "Judges 4-5",
+        key_attribute:
+          "Ended the life of Israel's enemy commander Sisera with her own hands after he sought refuge in her tent.",
+      },
+      sn: {
+        name: "Jaeri",
+        nickname_meaning: "Ushingi & Kununura",
+        original_profession: "Vatongi 4-5",
+        key_attribute:
+          "Akapedzisa upenyu hwomukuru wehondo yomuvengi weIsraeri Sisera nemaoko ake pachake mushure mokunge atsvaka utiziro mutende rake.",
+      },
+    },
+  },
+  {
+    id: "hannah",
+    category: "woman",
+    order: 7,
+    content: {
+      en: {
+        name: "Hannah",
+        nickname_meaning: "Prayer & Devotion",
+        original_profession: "1 Samuel 1-2",
+        key_attribute:
+          "Poured out her heart in desperate prayer for a child, then kept her vow to dedicate that son entirely to God's service.",
+      },
+      sn: {
+        name: "Hana",
+        nickname_meaning: "Munyengetero & Kuzvipira",
+        original_profession: "1 Samueri 1-2",
+        key_attribute:
+          "Akadurura mwoyo wake munyengetero unopindiwa nokuda kwomwana, ndokuzochengeta mhiko yake yokupira mwanakomana uyu zvachose kubasa raMwari.",
+      },
+    },
+  },
+  {
+    id: "abigail",
+    category: "woman",
+    order: 8,
+    content: {
+      en: {
+        name: "Abigail",
+        nickname_meaning: "Wisdom & Diplomacy",
+        original_profession: "1 Samuel 25",
+        key_attribute:
+          "Used quick thinking, humility, and generosity to prevent a massacre and turn away the future King David's anger.",
+      },
+      sn: {
+        name: "Abhigairi",
+        nickname_meaning: "Uchenjeri & Runyararo",
+        original_profession: "1 Samueri 25",
+        key_attribute:
+          "Akashandisa mafungiro anokurumidza, kuzvininipisa, uye kupa nomwoyo wose kudzivirira kuuraiwa kwakawanda uye kudzora hasha dzaMambo Dhavhidhi wemberi.",
+      },
+    },
+  },
+  {
+    id: "huldah",
+    category: "woman",
+    order: 9,
+    content: {
+      en: {
+        name: "Huldah",
+        nickname_meaning: "Prophetic Authority",
+        original_profession: "2 Kings 22; 2 Chronicles 34",
+        key_attribute:
+          "Authenticated the newly rediscovered Book of the Law and delivered a decisive prophetic word during a pivotal religious reform.",
+      },
+      sn: {
+        name: "Huridha",
+        nickname_meaning: "Simba reUporofita",
+        original_profession: "2 Madzimambo 22; 2 Makoronike 34",
+        key_attribute:
+          "Akasimbisa Bhuku roMurau rakangowanikwazve uye akapa shoko rouporofita rinokosha panguva yeshanduko huru dzechitendero.",
+      },
+    },
+  },
+  {
+    id: "proverbs-31-woman",
+    category: "woman",
+    order: 13,
+    content: {
+      en: {
+        name: "The Proverbs 31 Woman",
+        nickname_meaning: "Wisdom Ideal",
+        original_profession: "Proverbs 31",
+        key_attribute:
+          "Source of the phrase 'woman of valour' itself, portraying an idealized picture of wisdom, industry, generosity, and strength of character rather than a single historical individual.",
+      },
+      sn: {
+        name: "Mukadzi weZvirevo 31",
+        nickname_meaning: "Muenzaniso weUchenjeri",
+        original_profession: "Zvirevo 31",
+        key_attribute:
+          "Ndiye chikonzero chemashoko okuti 'mukadzi ane ushingi,' achiratidza mufananidzo unokwana wounyanzvi, kushingaira, kupa nomwoyo wose, uye simba rehunhu panzvimbo pomunhu mumwe chete wenhoroondo.",
       },
     },
   },
