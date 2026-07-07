@@ -23,7 +23,7 @@ export default function HomeScreen() {
             <View>
               <View style={styles.brandRow}>
                 <ThemedText type="title" style={styles.brand}>
-                  myble
+                  ZimBible
                 </ThemedText>
                 <ZimFlag width={44} />
               </View>
@@ -42,7 +42,6 @@ export default function HomeScreen() {
               <LanguageToggle />
             </View>
           </View>
-
           {/* Featured: The Ten Commandments */}
           <Pressable
             style={({ pressed }) => [
@@ -58,7 +57,6 @@ export default function HomeScreen() {
             </View>
             <ThemedText style={styles.featureChevron}>›</ThemedText>
           </Pressable>
-
           {/* Sections */}
           {HOME_SECTIONS.map((section) => (
             <View key={section.id} style={styles.section}>
@@ -75,7 +73,6 @@ export default function HomeScreen() {
             </View>
           ))}
         </ScrollView>
-
         {/* Floating action button */}
         <Pressable
           style={({ pressed }) => [styles.fab, pressed && styles.fabPressed]}
