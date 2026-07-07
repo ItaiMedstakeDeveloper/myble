@@ -399,7 +399,7 @@ Muupenyu hwedu.`,
     Minana, Minana, Minana nezviratidzo (You do, you perform miracles)`,
   },
   {
-    id: "makanaka-jesu-munoshamisa",
+    id: "jesu-makanaka",
     title: "Jesu Makanaka",
     lyrics: `Jesu Makanaka Hiya
     Jesu Makanaka Hiya 
@@ -487,90 +487,9 @@ I've walked everywhere,
 I've circled/turned everywhere,
 I've searched everywhere. 
 There isn't, nor will there ever be!"
-
-A musical setting in Shona appea`,
-  },
-  {
-    id: "hakuna-wakaita-sajesu",
-    title: "Hakuna wakaita saJesu",
-    lyrics: `"Hakuna Wakaita sa Jesu, 
-haku hakunaba/hakuchina.
- 
-Ndamhanyamhanya kwese kwese,
-Ndatenderera kwese kwese,
-Ndatsvagatsvaga kwese kwese,
-Haku hakunaba/hakuchina."
-
-Swahili:
-"Hakuna Mungu kama wewe, 
-Hakuna na hatakuwepo
-
-Nimetembea kote kote,
-Nimezunguka kote kote,
-Nimetafuta kote kote,
-Hakuna na hatakuwepo."
-
-English (singing translation):
-"There's no one, there's no one like Jesus.
-There's no one, there's no one like him.
-
-I've walked and walked all over, over.
-I turned and turned all over, over.
-I've searched and searched all over, over.
-There's no one, there's no one like him.
-
-English (literal translation):
-"There is no God like you.
-There isn't, nor will their ever be!
-
-I've walked everywhere,
-I've circled/turned everywhere,
-I've searched everywhere. 
-There isn't, nor will there ever be!"
-
-A musical setting in Shona appea`,
+`,
   },
 
-  {
-    id: "hakuna-wakaita-sajesu",
-    title: "Hakuna wakaita saJesu",
-    lyrics: `"Hakuna Wakaita sa Jesu, 
-haku hakunaba/hakuchina.
- 
-Ndamhanyamhanya kwese kwese,
-Ndatenderera kwese kwese,
-Ndatsvagatsvaga kwese kwese,
-Haku hakunaba/hakuchina."
-
-Swahili:
-"Hakuna Mungu kama wewe, 
-Hakuna na hatakuwepo
-
-Nimetembea kote kote,
-Nimezunguka kote kote,
-Nimetafuta kote kote,
-Hakuna na hatakuwepo."
-
-English (singing translation):
-"There's no one, there's no one like Jesus.
-There's no one, there's no one like him.
-
-I've walked and walked all over, over.
-I turned and turned all over, over.
-I've searched and searched all over, over.
-There's no one, there's no one like him.
-
-English (literal translation):
-"There is no God like you.
-There isn't, nor will their ever be!
-
-I've walked everywhere,
-I've circled/turned everywhere,
-I've searched everywhere. 
-There isn't, nor will there ever be!"
-
-A musical setting in Shona appea`,
-  },
   {
     id: "jesu-indombo",
     title: "Jesu Idombo",
